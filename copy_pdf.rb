@@ -4,8 +4,8 @@ require 'fileutils'
 # Get today's date in yyyy-mm-dd format
 today = Time.now.strftime("%Y-%m-%d")
 
-# Define the buffer directory path
-buffer_dir = File.expand_path("~/Library/Mobile Documents/com~apple~CloudDocs/buffer/")
+# Define the PDF_Review directory path
+PDF_Review_dir = File.expand_path("~/Library/Mobile Documents/com~apple~CloudDocs/PDF_Review/")
 
 # Initialize the variable to store the newest PDF file path
 pdf_file = nil
@@ -24,13 +24,13 @@ else
   exit
 end
 
-# Create the buffer directory if it doesn't exist
-FileUtils.mkdir_p(buffer_dir) unless Dir.exist?(buffer_dir)
+# Create the PDF_Review directory if it doesn't exist
+FileUtils.mkdir_p(PDF_Review_dir) unless Dir.exist?(PDF_Review_dir)
 
 # Try to copy and rename the PDF file
 begin
-  FileUtils.cp(pdf_file, File.join(buffer_dir, "#{today}.pdf"), preserve: true)
-  puts "PDF file copied and renamed to '#{today}.pdf' in the 'buffer' directory."
+  FileUtils.cp(pdf_file, File.join(PDF_Review_dir, "#{today}.pdf"), preserve: true)
+  puts "PDF file copied and renamed to '#{today}.pdf' in the 'PDF_Review' directory."
 rescue StandardError => e
   puts "Failed to copy and rename the PDF file."
   puts "Error: #{e.message}"

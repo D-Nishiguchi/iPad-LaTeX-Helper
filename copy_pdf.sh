@@ -17,11 +17,11 @@ fi
 today=$(date +"%Y-%m-%d")
 
 # コピー先のディレクトリを指定
-destination="$HOME/Library/Mobile Documents/com~apple~CloudDocs/buffer"
+destination="$HOME/Library/Mobile Documents/com~apple~CloudDocs/PDF_Review"
 
 # PDF ファイルをコピーして名前を変更し、同じファイル名が存在する場合は上書き
 if cp -f "$pdf_file" "$destination/${today}.pdf"; then
-    echo "PDF file copied and renamed to '${today}.pdf' in the 'buffer' directory."
+    echo "PDF file copied and renamed to '${today}.pdf' in the 'PDF_Review' directory."
 else
     echo "Failed to copy and rename the PDF file."
     exit 1
